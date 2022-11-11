@@ -1,9 +1,9 @@
 import { chalk } from "@vuepress/utils";
-import { stripTags } from "vuepress-shared/node";
+import { md2text, stripTags } from "vuepress-shared/node";
 
 import { convertOptions } from "./compact/index.js";
 import { appendSEO, generateRobotsTxt } from "./seo.js";
-import { logger, md2text } from "./utils.js";
+import { logger } from "./utils.js";
 
 import type { Plugin, PluginFunction } from "@vuepress/core";
 import type { ExtendPage, SeoOptions } from "../shared/index.js";
@@ -28,8 +28,8 @@ export const seoPlugin =
 
       extendsPage: (page: ExtendPage, app): void => {
         // generate summary
-        if (!page.frontmatter.description)
-          page.frontmatter.summary =
+        if (!page.frontmatter.description && options.autoDescription)
+          page.frontmatter.description =
             stripTags(page.excerpt) ||
             md2text(page.content).slice(0, 180) ||
             "";
