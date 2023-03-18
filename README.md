@@ -17,7 +17,7 @@
 
 <!-- markdownlint-restore -->
 
-[![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Total downloads](https://img.shields.io/npm/dt/vuepress-theme-hope?style=flat-square&logo=npm) ![Size](https://img.shields.io/bundlephobia/min/vuepress-theme-hope?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-hope)
+[![Version](https://img.shields.io/npm/v/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Downloads](https://img.shields.io/npm/dm/vuepress-theme-hope.svg?style=flat-square&logo=npm) ![Total downloads](https://img.shields.io/npm/dt/vuepress-theme-hope?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-hope)
 
 [![open collective](https://opencollective.com/vuepress-theme-hope/tiers/badge.svg)](https://opencollective.com/vuepress-theme-hope)
 
@@ -66,3 +66,7 @@ Also V2 has a better performance:🚀
 Thanks to all the contributors!
 
 [![contributors](https://contrib.rocks/image?repo=vuepress-theme-hope/vuepress-theme-hope)](https://github.com/vuepress-theme-hope/vuepress-theme-hope/graphs/contributors)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/vuepress-theme-hope/vuepress-theme-hope.svg)](https://starchart.cc/vuepress-theme-hope/vuepress-theme-hope)
