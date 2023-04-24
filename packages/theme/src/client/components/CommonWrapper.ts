@@ -63,15 +63,12 @@ export default defineComponent({
       ThemeProjectHomePageFrontmatter | ThemeNormalPageFrontmatter
     >();
     const themeLocale = useThemeLocaleData();
-    const { isMobile, isWide } = useWindowSize();
+    const { isMobile, isPC } = useWindowSize();
 
     const [isMobileSidebarOpen, toggleMobileSidebar] = useToggle(false);
     const [isDesktopSidebarCollapsed, toggleDesktopSidebar] = useToggle(false);
 
     const sidebarItems = useSidebarItems();
-
-    const body = ref<HTMLElement>();
-    const isLocked = useScrollLock(body);
 
     // navbar
     const hideNavbar = ref(false);
@@ -158,22 +155,23 @@ export default defineComponent({
       )
     );
 
-    watch(isMobileSidebarOpen, (value) => {
-      isLocked.value = value;
-    });
-
     watch(isMobile, (value) => {
       if (!value) toggleMobileSidebar(false);
     });
 
     onMounted(() => {
-      body.value = document.body;
+      const isLocked = useScrollLock(document.body);
+
+      watch(isMobileSidebarOpen, (value) => {
+        isLocked.value = value;
+      });
 
       const unregisterRouterHook = router.afterEach((): void => {
         toggleMobileSidebar(false);
       });
 
       onUnmounted(() => {
+        isLocked.value = false;
         unregisterRouterHook();
       });
     });
@@ -203,7 +201,7 @@ export default defineComponent({
                   "hide-navbar": hideNavbar.value,
                   "sidebar-collapsed":
                     !isMobile.value &&
-                    !isWide.value &&
+                    !isPC.value &&
                     isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
                 },

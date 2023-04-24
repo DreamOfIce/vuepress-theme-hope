@@ -1,14 +1,6 @@
 import { theme } from "docs-shared";
-import {
-  enNavbarConfig,
-  zhNavbarConfig,
-  ruNavbarConfig,
-} from "./navbar/index.js";
-import {
-  enSidebarConfig,
-  zhSidebarConfig,
-  ruSidebarConfig,
-} from "./sidebar/index.js";
+import { enNavbarConfig, zhNavbarConfig } from "./navbar/index.js";
+import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
 
 const IS_NETLIFY = "NETLIFY" in process.env;
 
@@ -28,6 +20,10 @@ export default theme("theme", {
 
   fullscreen: true,
 
+  extraLocales: {
+    Русский: "https://theme-hope-ru.vuejs.press/:route",
+  },
+
   locales: {
     "/": {
       navbar: enNavbarConfig,
@@ -37,9 +33,12 @@ export default theme("theme", {
       navbar: zhNavbarConfig,
       sidebar: zhSidebarConfig,
     },
-    "/ru/": {
-      navbar: ruNavbarConfig,
-      sidebar: ruSidebarConfig,
+  },
+
+  encrypt: {
+    config: {
+      "/demo/encrypt.html": "1234",
+      "/zh/demo/encrypt.html": "1234",
     },
   },
 
@@ -98,18 +97,6 @@ export default theme("theme", {
                   },
                 ],
               },
-              {
-                path: "/ru/",
-                title: "Новое местоположение документации",
-                content:
-                  "Наша документация переехала на новый домен vuejs.press<br>Текущая документация построена на основе последнего коммита в главной ветке и может содержать <strong>неопубликованные изменения</strong>!",
-                actions: [
-                  {
-                    text: "Посетите сейчас",
-                    link: "https://theme-hope.vuejs.press/ru/",
-                  },
-                ],
-              },
             ],
           },
     },
@@ -125,6 +112,7 @@ export default theme("theme", {
     mdEnhance: {
       align: true,
       attrs: true,
+      card: true,
       chart: true,
       codetabs: true,
       demo: true,

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-sitemap2",
-  "version": "2.0.0-beta.193",
+  "version": "2.0.0-beta.206",
   "description": "Sitemap plugin for vuepress",
   "keywords": [
     "vuepress",
@@ -58,15 +58,11 @@
   },
   "peerDependencies": {
     "vuepress": "2.0.0-beta.61",
-    "vuepress-shared": "workspace:*",
     "vuepress-vite": "2.0.0-beta.61",
     "vuepress-webpack": "2.0.0-beta.61"
   },
   "peerDependenciesMeta": {
     "vuepress": {
-      "optional": true
-    },
-    "vuepress-shared": {
       "optional": true
     },
     "vuepress-vite": {
